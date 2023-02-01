@@ -99,7 +99,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n            \"email\": \"prueba3.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 1,\r\n                \"PasswordLastChange\": \"2022-09-09\",\r\n                \"LastConnection\": \"2022-09-09\",\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
+									"raw": "{\r\n            \"email\": \"prueba5.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 1,\r\n                \"PasswordLastChange\": \"2022-09-09\",\r\n                \"LastConnection\": \"2022-09-09\",\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -177,6 +177,102 @@
 										"administrativo",
 										"usuarios",
 										"cambiar-rol"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar Url Creacion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"prueba5.admin@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/usuarios/validar-url-creacion?Codigo=76527c34-6c3e-4d3b-b3ad-263c739814ae",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"usuarios",
+										"validar-url-creacion"
+									],
+									"query": [
+										{
+											"key": "Codigo",
+											"value": "76527c34-6c3e-4d3b-b3ad-263c739814ae"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generar OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/usuarios/generar-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"usuarios",
+										"generar-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"OTP\": \"753585\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/usuarios/validar-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"usuarios",
+										"validar-otp"
 									]
 								}
 							},
@@ -259,7 +355,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:9090/calidad/analisis/composicional/listar",
+									"raw": "http://localhost:9090/calidad/analisis/composicional/listar?tipo=INTERNO",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -270,6 +366,12 @@
 										"analisis",
 										"composicional",
 										"listar"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": "INTERNO"
+										}
 									]
 								}
 							},
@@ -360,6 +462,43 @@
 										"analisis",
 										"composicional",
 										"editar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Exportar Analisis Excel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/calidad/analisis/composicional/exportar-excel?tipo=EXTERNO",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"calidad",
+										"analisis",
+										"composicional",
+										"exportar-excel"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": "EXTERNO"
+										}
 									]
 								}
 							},
@@ -543,6 +682,37 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Exportar Rutas Excel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/abastecimiento/admin/rutas/exportar-excel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"abastecimiento",
+										"admin",
+										"rutas",
+										"exportar-excel"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -691,6 +861,37 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Exportar Compartimientos Excel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/abastecimiento/admin/compartimientos/exportar-excel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"abastecimiento",
+										"admin",
+										"compartimientos",
+										"exportar-excel"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -835,6 +1036,37 @@
 										"admin",
 										"proveedores",
 										"cambiar-estado"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Exportar Proveedores Excel",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/abastecimiento/admin/proveedores/exportar-excel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"abastecimiento",
+										"admin",
+										"proveedores",
+										"exportar-excel"
 									]
 								}
 							},
@@ -989,7 +1221,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiU3RhdHVzXCI6MSxcIlByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOm51bGwsXCJpZFwiOjEsXCJuYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJpbWFnZXNcIjpudWxsLFwibGFzdE5hbWVzXCI6XCJOb3ZvYVwiLFwibnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIn0sXCJBY2NvdW50U2V0dGluZ0luZm9cIjp7XCJJZFwiOjEsXCJDcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwiUGFzc3dvcmRTdGF0dXNcIjoxLFwiUGFzc3dvcmRMYXN0Q2hhbmdlXCI6XCIyMDIyLTA5LTA5XCIsXCJMYXN0Q29ubmVjdGlvblwiOlwiMjAyMi0wOS0wOVwiLFwiU2VzaW9uXCI6XCJERVNCTE9RVUVBREFcIixcImlkXCI6MSxcImNyZWF0aW9uRGF0ZVwiOlwiMjAyMi0wOS0wOSAwMDowMDowMC4wXCIsXCJzZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwicGFzc3dvcmRTdGF0dXNcIjoxLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwifSxcImlkXCI6MSxcInN0YXR1c1wiOjEsXCJhY2NvdW50U2V0dGluZ0luZm9cIjp7XCJJZFwiOjEsXCJDcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwiUGFzc3dvcmRTdGF0dXNcIjoxLFwiUGFzc3dvcmRMYXN0Q2hhbmdlXCI6XCIyMDIyLTA5LTA5XCIsXCJMYXN0Q29ubmVjdGlvblwiOlwiMjAyMi0wOS0wOVwiLFwiU2VzaW9uXCI6XCJERVNCTE9RVUVBREFcIixcImlkXCI6MSxcImNyZWF0aW9uRGF0ZVwiOlwiMjAyMi0wOS0wOSAwMDowMDowMC4wXCIsXCJzZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwicGFzc3dvcmRTdGF0dXNcIjoxLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwifSxcInByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOm51bGwsXCJpZFwiOjEsXCJuYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJpbWFnZXNcIjpudWxsLFwibGFzdE5hbWVzXCI6XCJOb3ZvYVwiLFwibnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIn0sXCJwYXNzd29yZFwiOm51bGx9IiwiQXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBRE9SIiwiYXV0aGVudGljYXRlZCI6dHJ1ZSwiaWF0IjoxNjc0OTM0MDQ5LCJleHAiOjE2NzQ5NzAwNDl9.z1KYu9F1npfe-d_f5YS3qdWmfDy6rTLetXItYXbNpXaG5bCGN0Xa2lvh2lTUs0509XRRFo0K1NWlf9HST6y2Ag",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiU3RhdHVzXCI6MSxcIlByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCJ9LFwiQWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJpZFwiOjEsXCJ1cmxDcmVhdGlvblwiOm51bGwsXCJwYXNzd29yZFN0YXR1c1wiOjEsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJwYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIn0sXCJSb2xJbmZvXCI6bnVsbCxcImlkXCI6MSxcInByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCJ9LFwic3RhdHVzXCI6MSxcInJvbEluZm9cIjpudWxsLFwiYWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJpZFwiOjEsXCJ1cmxDcmVhdGlvblwiOm51bGwsXCJwYXNzd29yZFN0YXR1c1wiOjEsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJwYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIn0sXCJwYXNzd29yZFwiOm51bGx9IiwiQXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBRE9SIiwiYXV0aGVudGljYXRlZCI6dHJ1ZSwiaWF0IjoxNjc1MjgzNjAyLCJleHAiOjE2NzUzMTk2MDJ9.v96W3sb9IQ4B3D-PFQAu3BM3gDqiF_-JsAc0PToD5VuP2ofhf4GhGn_qhr-LHSyVPzQWKtq650BtY8HFXprU8Q",
 				"type": "string"
 			}
 		]

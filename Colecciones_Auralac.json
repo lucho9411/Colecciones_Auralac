@@ -99,7 +99,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n            \"email\": \"prueba5.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 1,\r\n                \"PasswordLastChange\": \"2022-09-09\",\r\n                \"LastConnection\": \"2022-09-09\",\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
+									"raw": "{\r\n            \"email\": \"prueba11.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 0,\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -183,13 +183,13 @@
 							"response": []
 						},
 						{
-							"name": "Validar Url Creacion",
+							"name": "Asignar Password",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"prueba5.admin@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"Email\": \"prueba5.admin@gmail.com\",\r\n    \"CurrentPassword\": \"Prueba12345\",\r\n    \"NewPassword\": \"Prueba1234567\",\r\n    \"ConfirmationPassword\": \"Prueba1234567\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -197,7 +197,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:9090/administrativo/usuarios/validar-url-creacion?Codigo=76527c34-6c3e-4d3b-b3ad-263c739814ae",
+									"raw": "http://localhost:9090/administrativo/usuarios/asignar-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -206,26 +206,20 @@
 									"path": [
 										"administrativo",
 										"usuarios",
-										"validar-url-creacion"
-									],
-									"query": [
-										{
-											"key": "Codigo",
-											"value": "76527c34-6c3e-4d3b-b3ad-263c739814ae"
-										}
+										"asignar-password"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Generar OTP",
+							"name": "Guardar Perfil",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"email\": \"prueba.admin@gmail.com\",\r\n    \"ProfileInfo\": {\r\n        \"NumberIdentification\": \"55456456\",\r\n        \"Names\": \"Prueba\",\r\n        \"LastNames\": \"Admin\",\r\n        \"Images\": null\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -233,7 +227,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:9090/administrativo/usuarios/generar-otp",
+									"raw": "http://localhost:9090/administrativo/perfiles/agregar",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -241,38 +235,8 @@
 									"port": "9090",
 									"path": [
 										"administrativo",
-										"usuarios",
-										"generar-otp"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Validar OTP",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"OTP\": \"753585\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:9090/administrativo/usuarios/validar-otp",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "9090",
-									"path": [
-										"administrativo",
-										"usuarios",
-										"validar-otp"
+										"perfiles",
+										"agregar"
 									]
 								}
 							},
@@ -334,6 +298,137 @@
 										"administrativo",
 										"roles",
 										"listar"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Configuracion Cuenta",
+					"item": [
+						{
+							"name": "Validar Url Creacion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/validar-url-creacion?Codigo=a19c84a9-4624-447c-9249-81a4c923c7ba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"validar-url-creacion"
+									],
+									"query": [
+										{
+											"key": "Codigo",
+											"value": "a19c84a9-4624-447c-9249-81a4c923c7ba"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generar OTP",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/generar-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"generar-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"OTP\": \"985047\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/validar-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"validar-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Guardar Términos Condiciones",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"TermsConditions\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/terminos-condiciones",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"terminos-condiciones"
 									]
 								}
 							},
@@ -1221,7 +1316,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiU3RhdHVzXCI6MSxcIlByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCJ9LFwiQWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJpZFwiOjEsXCJ1cmxDcmVhdGlvblwiOm51bGwsXCJwYXNzd29yZFN0YXR1c1wiOjEsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJwYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIn0sXCJSb2xJbmZvXCI6bnVsbCxcImlkXCI6MSxcInByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCJ9LFwic3RhdHVzXCI6MSxcInJvbEluZm9cIjpudWxsLFwiYWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJpZFwiOjEsXCJ1cmxDcmVhdGlvblwiOm51bGwsXCJwYXNzd29yZFN0YXR1c1wiOjEsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJwYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIn0sXCJwYXNzd29yZFwiOm51bGx9IiwiQXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBRE9SIiwiYXV0aGVudGljYXRlZCI6dHJ1ZSwiaWF0IjoxNjc1MjgzNjAyLCJleHAiOjE2NzUzMTk2MDJ9.v96W3sb9IQ4B3D-PFQAu3BM3gDqiF_-JsAc0PToD5VuP2ofhf4GhGn_qhr-LHSyVPzQWKtq650BtY8HFXprU8Q",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiU3RhdHVzXCI6MSxcIlByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCJ9LFwiQWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJHZW5lcmF0ZU9UUFwiOjAsXCJUZXJtc0NvbmRpdGlvbnNcIjoxLFwiaWRcIjoxLFwicGFzc3dvcmRMYXN0Q2hhbmdlXCI6XCIyMDIyLTA5LTA5XCIsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwicGFzc3dvcmRTdGF0dXNcIjoxLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInRlcm1zQ29uZGl0aW9uc1wiOjEsXCJzZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwidXJsQ3JlYXRpb25cIjpudWxsLFwiZ2VuZXJhdGVPVFBcIjowfSxcIlJvbEluZm9cIjpudWxsLFwiaWRcIjoxLFwic3RhdHVzXCI6MSxcInBhc3N3b3JkXCI6bnVsbCxcImFjY291bnRTZXR0aW5nSW5mb1wiOntcIklkXCI6MSxcIkNyZWF0aW9uRGF0ZVwiOlwiMjAyMi0wOS0wOSAwMDowMDowMC4wXCIsXCJQYXNzd29yZFN0YXR1c1wiOjEsXCJQYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIixcIkxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJTZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwiVXJsQ3JlYXRpb25cIjpudWxsLFwiR2VuZXJhdGVPVFBcIjowLFwiVGVybXNDb25kaXRpb25zXCI6MSxcImlkXCI6MSxcInBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiY3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcInBhc3N3b3JkU3RhdHVzXCI6MSxcImxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJ0ZXJtc0NvbmRpdGlvbnNcIjoxLFwic2VzaW9uXCI6XCJERVNCTE9RVUVBREFcIixcInVybENyZWF0aW9uXCI6bnVsbCxcImdlbmVyYXRlT1RQXCI6MH0sXCJwcm9maWxlSW5mb1wiOntcIklkXCI6MSxcIk51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJOYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJMYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJJbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJpZFwiOjEsXCJuYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJudW1iZXJJZGVudGlmaWNhdGlvblwiOlwiMTIzNDU2N1wiLFwiaW1hZ2VzXCI6XCJodHRwczovLzE5Mi4xNjguMS4yL1NlcnZpZG9yL01pc19Eb2N1bWVudG9zL0NvbnRyb2xMZWNoZS9sZW5vdm9hNEBtaXNlbmEuZWR1LmNvL0ltYWdlLmpwZ1wiLFwibGFzdE5hbWVzXCI6XCJOb3ZvYVwifSxcInJvbEluZm9cIjpudWxsfSIsIkF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQURPUiIsImF1dGhlbnRpY2F0ZWQiOnRydWUsImlhdCI6MTY3NTM1OTgxMywiZXhwIjoxNjc1Mzk1ODEzfQ.Y0Jwx8sN6Xc1_Hs9G3QRkbSGw5eKOCe5HYDszAfW4qj8gtOLGLCTjdY2-09MD1z0qU2C38nbPpWbO8XnbFInig",
 				"type": "string"
 			}
 		]

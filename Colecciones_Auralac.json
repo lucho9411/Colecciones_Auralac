@@ -351,7 +351,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"email\": \"lenovoa4@misena.edu.co\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -418,6 +418,27 @@
 										}
 									}
 								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/terminos-condiciones",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"terminos-condiciones"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Texto Términos Condiciones",
+							"request": {
+								"method": "GET",
+								"header": [],
 								"url": {
 									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/terminos-condiciones",
 									"protocol": "http",

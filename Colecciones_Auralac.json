@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\",\r\n    \"Password\": \"Lucho123456\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\",\r\n    \"Password\": \"Lucho123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -99,7 +99,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n            \"email\": \"prueba11.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 0,\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
+									"raw": "{\r\n            \"email\": \"prueba20.admin@gmail.com\",\r\n            \"Status\": 1,\r\n            \"AccountSettingInfo\": {\r\n                \"CreationDate\": \"2022-09-09 00:00:00.0\",\r\n                \"PasswordStatus\": 0,\r\n                \"Sesion\": \"DESBLOQUEADA\"\r\n            },\r\n            \"RolInfo\": {\r\n                \"IdRol\": 1,\r\n                \"NombreRol\": \"ADMINISTRADOR\",\r\n                \"DescripcionRol\": \"ROL ADMINISTRADOR DEL SISTEMA\"\r\n            }\r\n        }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -189,7 +189,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"Email\": \"prueba5.admin@gmail.com\",\r\n    \"CurrentPassword\": \"Prueba12345\",\r\n    \"NewPassword\": \"Prueba1234567\",\r\n    \"ConfirmationPassword\": \"Prueba1234567\"\r\n}",
+									"raw": "{\r\n    \"Email\": \"abastecimiento55@gmail.com\",\r\n    \"NewPassword\": \"ABA.12345\",\r\n    \"ConfirmationPassword\": \"ABA.12345\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -315,7 +315,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"prueba4.admin@gmail.com\"\r\n}",
+									"raw": "{\r\n    \"email\": \"prueba5.admin@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -323,7 +323,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/validar-url-creacion?Codigo=a19c84a9-4624-447c-9249-81a4c923c7ba",
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/validar-url-creacion?Codigo=76527c34-6c3e-4d3b-b3ad-263c739814ae",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -337,7 +337,7 @@
 									"query": [
 										{
 											"key": "Codigo",
-											"value": "a19c84a9-4624-447c-9249-81a4c923c7ba"
+											"value": "76527c34-6c3e-4d3b-b3ad-263c739814ae"
 										}
 									]
 								}
@@ -381,7 +381,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"OTP\": \"985047\"\r\n}",
+									"raw": "{\r\n    \"Email\": \"lenovoa4@misena.edu.co\",\r\n    \"OTP\": \"837521\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -411,7 +411,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"TermsConditions\": 0\r\n}",
+									"raw": "{\r\n    \"Email\": \"prueba4.admin@gmail.com\",\r\n    \"TermsConditions\": 1\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -450,6 +450,66 @@
 										"administrativo",
 										"configuracion-cuenta",
 										"terminos-condiciones"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Estado Sesión",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"lenovoa4@misena.edu.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/estado-sesion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"estado-sesion"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cambiar Estado Sesion",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\": \"calidad123@prueba.com\",\r\n    \"Estado\": \"BLOQUEADA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/administrativo/configuracion-cuenta/estado-sesion",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"administrativo",
+										"configuracion-cuenta",
+										"estado-sesion"
 									]
 								}
 							},
@@ -1337,7 +1397,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiU3RhdHVzXCI6MSxcIlByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCJ9LFwiQWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJHZW5lcmF0ZU9UUFwiOjAsXCJUZXJtc0NvbmRpdGlvbnNcIjoxLFwiaWRcIjoxLFwicGFzc3dvcmRMYXN0Q2hhbmdlXCI6XCIyMDIyLTA5LTA5XCIsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwiLFwicGFzc3dvcmRTdGF0dXNcIjoxLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcInRlcm1zQ29uZGl0aW9uc1wiOjEsXCJzZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwidXJsQ3JlYXRpb25cIjpudWxsLFwiZ2VuZXJhdGVPVFBcIjowfSxcIlJvbEluZm9cIjpudWxsLFwiaWRcIjoxLFwic3RhdHVzXCI6MSxcInBhc3N3b3JkXCI6bnVsbCxcImFjY291bnRTZXR0aW5nSW5mb1wiOntcIklkXCI6MSxcIkNyZWF0aW9uRGF0ZVwiOlwiMjAyMi0wOS0wOSAwMDowMDowMC4wXCIsXCJQYXNzd29yZFN0YXR1c1wiOjEsXCJQYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjItMDktMDlcIixcIkxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJTZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwiVXJsQ3JlYXRpb25cIjpudWxsLFwiR2VuZXJhdGVPVFBcIjowLFwiVGVybXNDb25kaXRpb25zXCI6MSxcImlkXCI6MSxcInBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMi0wOS0wOVwiLFwiY3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcInBhc3N3b3JkU3RhdHVzXCI6MSxcImxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJ0ZXJtc0NvbmRpdGlvbnNcIjoxLFwic2VzaW9uXCI6XCJERVNCTE9RVUVBREFcIixcInVybENyZWF0aW9uXCI6bnVsbCxcImdlbmVyYXRlT1RQXCI6MH0sXCJwcm9maWxlSW5mb1wiOntcIklkXCI6MSxcIk51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJOYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJMYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJJbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJpZFwiOjEsXCJuYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJudW1iZXJJZGVudGlmaWNhdGlvblwiOlwiMTIzNDU2N1wiLFwiaW1hZ2VzXCI6XCJodHRwczovLzE5Mi4xNjguMS4yL1NlcnZpZG9yL01pc19Eb2N1bWVudG9zL0NvbnRyb2xMZWNoZS9sZW5vdm9hNEBtaXNlbmEuZWR1LmNvL0ltYWdlLmpwZ1wiLFwibGFzdE5hbWVzXCI6XCJOb3ZvYVwifSxcInJvbEluZm9cIjpudWxsfSIsIkF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQURPUiIsImF1dGhlbnRpY2F0ZWQiOnRydWUsImlhdCI6MTY3NTM1OTgxMywiZXhwIjoxNjc1Mzk1ODEzfQ.Y0Jwx8sN6Xc1_Hs9G3QRkbSGw5eKOCe5HYDszAfW4qj8gtOLGLCTjdY2-09MD1z0qU2C38nbPpWbO8XnbFInig",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZW5vdm9hNEBtaXNlbmEuZWR1LmNvIiwiVXN1YXJpb0luZm8iOiJ7XCJJZFwiOjEsXCJlbWFpbFwiOlwibGVub3ZvYTRAbWlzZW5hLmVkdS5jb1wiLFwiUGFzc3dvcmRcIjpudWxsLFwiUGFzc3dvcmREZXNjXCI6bnVsbCxcIlN0YXR1c1wiOjEsXCJQcm9maWxlSW5mb1wiOntcIklkXCI6MSxcIk51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJOYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJMYXN0TmFtZXNcIjpcIk5vdm9hXCIsXCJJbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJpZFwiOjEsXCJuYW1lc1wiOlwiTHVpcyBFZHVhcmRvXCIsXCJudW1iZXJJZGVudGlmaWNhdGlvblwiOlwiMTIzNDU2N1wiLFwiaW1hZ2VzXCI6XCJodHRwczovLzE5Mi4xNjguMS4yL1NlcnZpZG9yL01pc19Eb2N1bWVudG9zL0NvbnRyb2xMZWNoZS9sZW5vdm9hNEBtaXNlbmEuZWR1LmNvL0ltYWdlLmpwZ1wiLFwibGFzdE5hbWVzXCI6XCJOb3ZvYVwifSxcIkFjY291bnRTZXR0aW5nSW5mb1wiOntcIklkXCI6MSxcIkNyZWF0aW9uRGF0ZVwiOlwiMjAyMi0wOS0wOSAwMDowMDowMC4wXCIsXCJQYXNzd29yZFN0YXR1c1wiOjEsXCJQYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjMtMDItMDVcIixcIkxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJTZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwiVXJsQ3JlYXRpb25cIjpudWxsLFwiR2VuZXJhdGVPVFBcIjowLFwiVGVybXNDb25kaXRpb25zXCI6MSxcImlkXCI6MSxcImxhc3RDb25uZWN0aW9uXCI6XCIyMDIyLTA5LTA5XCIsXCJnZW5lcmF0ZU9UUFwiOjAsXCJ0ZXJtc0NvbmRpdGlvbnNcIjoxLFwicGFzc3dvcmRMYXN0Q2hhbmdlXCI6XCIyMDIzLTAyLTA1XCIsXCJwYXNzd29yZFN0YXR1c1wiOjEsXCJzZXNpb25cIjpcIkRFU0JMT1FVRUFEQVwiLFwidXJsQ3JlYXRpb25cIjpudWxsLFwiY3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIn0sXCJSb2xJbmZvXCI6bnVsbCxcImlkXCI6MSxcInBhc3N3b3JkRGVzY1wiOm51bGwsXCJzdGF0dXNcIjoxLFwiYWNjb3VudFNldHRpbmdJbmZvXCI6e1wiSWRcIjoxLFwiQ3JlYXRpb25EYXRlXCI6XCIyMDIyLTA5LTA5IDAwOjAwOjAwLjBcIixcIlBhc3N3b3JkU3RhdHVzXCI6MSxcIlBhc3N3b3JkTGFzdENoYW5nZVwiOlwiMjAyMy0wMi0wNVwiLFwiTGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcIlNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJVcmxDcmVhdGlvblwiOm51bGwsXCJHZW5lcmF0ZU9UUFwiOjAsXCJUZXJtc0NvbmRpdGlvbnNcIjoxLFwiaWRcIjoxLFwibGFzdENvbm5lY3Rpb25cIjpcIjIwMjItMDktMDlcIixcImdlbmVyYXRlT1RQXCI6MCxcInRlcm1zQ29uZGl0aW9uc1wiOjEsXCJwYXNzd29yZExhc3RDaGFuZ2VcIjpcIjIwMjMtMDItMDVcIixcInBhc3N3b3JkU3RhdHVzXCI6MSxcInNlc2lvblwiOlwiREVTQkxPUVVFQURBXCIsXCJ1cmxDcmVhdGlvblwiOm51bGwsXCJjcmVhdGlvbkRhdGVcIjpcIjIwMjItMDktMDkgMDA6MDA6MDAuMFwifSxcInByb2ZpbGVJbmZvXCI6e1wiSWRcIjoxLFwiTnVtYmVySWRlbnRpZmljYXRpb25cIjpcIjEyMzQ1NjdcIixcIk5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIkxhc3ROYW1lc1wiOlwiTm92b2FcIixcIkltYWdlc1wiOlwiaHR0cHM6Ly8xOTIuMTY4LjEuMi9TZXJ2aWRvci9NaXNfRG9jdW1lbnRvcy9Db250cm9sTGVjaGUvbGVub3ZvYTRAbWlzZW5hLmVkdS5jby9JbWFnZS5qcGdcIixcImlkXCI6MSxcIm5hbWVzXCI6XCJMdWlzIEVkdWFyZG9cIixcIm51bWJlcklkZW50aWZpY2F0aW9uXCI6XCIxMjM0NTY3XCIsXCJpbWFnZXNcIjpcImh0dHBzOi8vMTkyLjE2OC4xLjIvU2Vydmlkb3IvTWlzX0RvY3VtZW50b3MvQ29udHJvbExlY2hlL2xlbm92b2E0QG1pc2VuYS5lZHUuY28vSW1hZ2UuanBnXCIsXCJsYXN0TmFtZXNcIjpcIk5vdm9hXCJ9LFwicm9sSW5mb1wiOm51bGwsXCJwYXNzd29yZFwiOm51bGx9IiwiQXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBRE9SIiwiYXV0aGVudGljYXRlZCI6dHJ1ZSwiaWF0IjoxNjc1NTkzNzYxLCJleHAiOjE2NzU2Mjk3NjF9.J39TNq5FvZ-h-_IHQ7aQarmc7Qtp4bb-4aRaUuMv3GYpKy_rfW3zHOBJWh5zDAL7epFNwyUZsSBnZ6kA9jpjdA",
 				"type": "string"
 			}
 		]
